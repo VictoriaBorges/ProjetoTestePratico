@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-victoria
+    restart: always
+    environment:
+      MYSQL_DATABASE: db_vitoriatotvs
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build: .
+    container_name: victoria-backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/db_vitoriatotvs?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+    networks:
+      - victoria-network
+
+volumes:
+  db_data:
+
+networks:
+  victoria-network:
+    driver: bridge

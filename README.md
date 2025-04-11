@@ -1,4 +1,4 @@
-# 🛍️ Sistema de Gerenciamento de Produtos - 
+# 🛍️ Sistema de Gerenciamento de Produtos 
 
 Este é um projeto Fullstack desenvolvido como parte de um desafio técnico. O sistema tem como objetivo o gerenciamento de produtos por categoria, oferecendo funcionalidades completas de cadastro, listagem, edição, exclusão e filtros.  
 

@@ -1,0 +1,46 @@
+.filtro-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  select {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .estoque-info {
+    margin-top: 1.5rem;
+
+    h4 {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .estoque-total {
+      background-color: #f3f5f9;
+      padding: 0.8rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+}

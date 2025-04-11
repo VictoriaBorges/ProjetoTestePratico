@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header-actions">
+    <a class="btn create" routerLink="/cadastrar">+ Novo Produto</a>
+  </div>
+
+ 
+  <app-estoque-categoria></app-estoque-categoria>
+
+  
+  <div class="card-grid" *ngIf="produtos.length > 0; else semProdutos">
+    <div class="card" *ngFor="let produto of produtos">
+      <h3>{{ produto.nome }}</h3>
+      <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+      <p><strong>Preço:</strong> R$ {{ produto.preco | number:'1.2-2' }}</p>
+      <p><strong>Estoque:</strong> {{ produto.quantidadeEstoque }}</p>
+      <p><strong>Categoria:</strong> {{ produto.categoria.nome || 'Sem categoria' }}</p>
+
+      <div class="card-actions">
+        <button class="btn edit" (click)="editarProduto(produto.id)">Editar</button>
+        <button class="btn delete" (click)="deletarProduto(produto.id)">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #semProdutos>
+    <p class="aviso">Nenhum produto encontrado.</p>
+  </ng-template>
+</div>
+
+<a routerLink="/cadastrar" class="floating-button">+ Novo Produto</a>

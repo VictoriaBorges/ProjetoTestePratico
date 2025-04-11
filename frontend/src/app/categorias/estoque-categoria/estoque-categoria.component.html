@@ -1,0 +1,17 @@
+<div class="filtro-card">
+  <h2>Estoque por Categoria</h2>
+  <label for="categoria">Selecione uma Categoria:</label>
+  <select id="categoria" (change)="filtrarPorCategoria($event)">
+    <option value="">Selecione</option>
+    <option *ngFor="let categoria of categorias" [value]="categoria.categoria">
+      {{ categoria.categoria }}
+    </option>
+  </select>
+
+  <div *ngIf="categoriaSelecionada" class="estoque-info">
+    <h4>Estoque da Categoria: {{ categoriaSelecionada }}</h4>
+    <div class="estoque-total">
+      Total de Estoque: {{ estoquePorCategoria }}
+    </div>
+  </div>
+</div>

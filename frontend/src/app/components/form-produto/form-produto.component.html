@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>{{ modoEdicao ? 'Editar Produto' : 'Cadastrar Produto' }}</h2>
+
+ 
+  <button class="voltar" (click)="voltar()">← Voltar para listagem</button>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <label for="nome">Nome:</label>
+    <input formControlName="nome" id="nome" type="text" />
+
+    <label for="descricao">Descrição:</label>
+    <input formControlName="descricao" id="descricao" type="text" />
+
+    <label for="preco">Preço:</label>
+    <input formControlName="preco" id="preco" type="number" />
+
+    <label for="quantidadeEstoque">Estoque:</label>
+    <input formControlName="quantidadeEstoque" id="quantidadeEstoque" type="number" />
+
+    <label for="categoria">Categoria (ID):</label>
+    <input formControlName="categoria.id" id="categoria" type="number" />
+
+    <button type="submit" class="salvar">
+      {{ modoEdicao ? 'Salvar Alterações' : 'Cadastrar' }}
+    </button>
+  </form>
+</div>
